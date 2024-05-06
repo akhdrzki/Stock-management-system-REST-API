@@ -1,0 +1,28 @@
+version: '3'
+services: 
+  web:
+    build: . 
+    ports:
+      - "2000:2000"
+  db: 
+    image: "mysql"
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: tracksystem
+      MYSQL_USER: rizki
+      MYSQL_PASSWORD: 123
+    volumes:
+      - db-data:/hono-tracker
+
+  adminer: 
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  db-data: {}
+
+
