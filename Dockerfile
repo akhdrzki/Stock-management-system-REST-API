@@ -12,4 +12,4 @@ ENV PORT=2000
 
 EXPOSE 2000
 
-CMD [ "bun", "dev"]
+CMD [ "bun", "nodemon"]
